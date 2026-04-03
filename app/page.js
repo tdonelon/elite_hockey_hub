@@ -1,24 +1,15 @@
-export default function Page(){
+export default function Page() {
+  return (
+    <main>
+      <h1>MN Elite Kern Hockey Hub</h1>
 
-return(
+      <h2>Practice Availability</h2>
 
-<div style={{
+      <p>Deployment successful.</p>
 
-background:"#0B0F1A",
-color:"white",
-height:"100vh",
-padding:"40px"
+      <button>Available</button>
+      <button>Not Available</button>
 
-}}>
-
-<h1>MN Elite Kern Hockey Hub</h1>
-
-<p>ORGANIC. UNIQUE. MODERN.</p>
-
-<p>Elite Training for Elite Athletes</p>
-
-</div>
-
-)
-
+    </main>
+  )
 }
