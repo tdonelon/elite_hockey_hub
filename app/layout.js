@@ -1,21 +1,13 @@
-export default function RootLayout({
-children
-}:{
-children:React.ReactNode
-}){
+export const metadata = {
+  title: "Elite Hockey Hub"
+}
 
-return(
-
-<html>
-
-<body>
-
-{children}
-
-</body>
-
-</html>
-
-)
-
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body style={{fontFamily:'Arial',padding:'20px'}}>
+        {children}
+      </body>
+    </html>
+  )
 }
