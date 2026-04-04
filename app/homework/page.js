@@ -1,10 +1,13 @@
-// Force dynamic rendering to fix build errors
-export const dynamic = 'force-dynamic';
+import { useState, useEffect } from 'react'
+import { supabase } from '../../lib/supabaseClient'
+import DataTable from '../components/DataTable'
 
 export default function HomeworkPage() {
-  return (
-    <div>
-      Homework Page
-    </div>
-  );
-}
+  const [homework, setHomework] = useState([])
+  const [form, setForm] = useState({ title: '', description: '', due_date: '' })
+  const [editingId, setEditingId] = useState(null)
+
+  useEffect(() => fetchHomework(), [])
+
+  async function fetchHomework() {
+    const { data } = await supabase.from('homework').select
