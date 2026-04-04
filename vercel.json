@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "app/**/*.js", "use": "@vercel/next" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+ "framework":"nextjs"
 }
