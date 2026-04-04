@@ -1,3 +1,5 @@
+'use client'; // required if using hooks or browser-only code
+
 import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabaseClient'
 import DataTable from '../components/DataTable'
