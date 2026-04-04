@@ -1,15 +1,9 @@
-import Link from 'next/link'
-
-export default function Home(){
-
-return(
-<div style={{padding:"40px",textAlign:"center"}}>
-<h1>MN Elite Kern Hockey Hub</h1>
-<p>Elite Training for Elite Athletes</p>
-<Link href="/dashboard">
-<button style={{background:"#00BFFF",padding:"20px",border:"none",color:"white",fontSize:"20px",borderRadius:"8px",cursor:"pointer"}}>Enter Hockey Hub</button>
-</Link>
-</div>
-)
-
+export default function HomePage() {
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>Welcome to MN Elite Hockey Hub</h1>
+      <p>Track practices, events, roster, and communicate with the team.</p>
+      <img src="/hockey-rink.jpg" alt="Hockey Rink" style={{ width: '100%', maxWidth: '600px' }}/>
+    </div>
+  )
 }
