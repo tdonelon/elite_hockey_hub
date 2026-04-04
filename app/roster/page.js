@@ -16,13 +16,10 @@ export default function RosterPage() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (editingId) {
-      await supabase.from('roster').update(form).eq('id', editingId)
-      setEditingId(null)
-    } else {
-      await supabase.from('roster').insert(form)
-    }
+    if (editingId) await supabase.from('roster').update(form).eq('id', editingId)
+    else await supabase.from('roster').insert(form)
     setForm({ name: '', position: '', number: '' })
+    setEditingId(null)
     fetchRoster()
   }
 
@@ -39,7 +36,7 @@ export default function RosterPage() {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>Team Roster</h1>
-      <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
+      <form onSubmit={handleSubmit}>
         <input placeholder="Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
         <input placeholder="Position" value={form.position} onChange={(e) => setForm({ ...form, position: e.target.value })} required />
         <input placeholder="Number" type="number" value={form.number} onChange={(e) => setForm({ ...form, number: e.target.value })} required />
